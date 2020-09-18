@@ -17,5 +17,9 @@ vehicles = [
 
 def count_occurrences(arr)
   keys = arr.uniq
-  hash = {}
-  keys.each
+  keys.map do|key| 
+    [key, arr.count {|v| v == key }]
+  end
+end
+
+puts count_occurrences(vehicles).to_h
